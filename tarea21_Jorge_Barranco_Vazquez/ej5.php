@@ -20,9 +20,6 @@
             echo "<tr><td>$numero</td><td>$cuadrado</td></tr>";
         }
 
-
-
-
         echo '</table>';
     ?>
 </body>
