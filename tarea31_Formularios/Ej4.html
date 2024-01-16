@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario completo</title>
+  </head>
+  <body>
+    <p>Escriba los siguientes datos:</p>
+    <br />
+
+    <form action="Ej4.php" method="post">
+      <table>
+        <tr>
+          <td>
+            Nombre: <br />
+            <input type="text" name="nombre" required />
+          </td>
+          <td>
+            Apellidos:<br />
+            <input type="text" name="apellidos" required />
+          </td>
+          <td>
+            Edad: <br />
+            <select name="edad" id="edad">
+              <option value="14-19">Entre 14 y 19 años</option>
+              <option value="20-39">Entre 20 y 39 años</option>
+              <option value="40-60">Entre 40 y 60 años</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Peso: <br />
+            <input type="number" name="peso" value="60" style="width: 50px" />
+            kg
+          </td>
+          <td>
+            Sexo: <br />
+            <input type="radio" name="sexo" value="hombre" checked /> Hombre
+            <input type="radio" name="sexo" value="mujer" /> Mujer
+          </td>
+          <td>
+            Estado Civil: <br />
+            <input type="radio" name="estado" value="soltero" checked /> Soltero
+            <input type="radio" name="estado" value="casado" /> Casado
+            <input type="radio" name="estado" value="otro" /> Otro
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td rowspan="2">Aficiones:</td>
+          <td>
+            <input type="checkbox" name="aficiones[]" value="cine" /> Cine
+          </td>
+          <td>
+            <input
+              type="checkbox"
+              name="aficiones[]"
+              value="literatura"
+            />Literatura
+          </td>
+          <td>
+            <input type="checkbox" name="aficiones[]" value="tebeos" />Tebeos
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" name="aficiones[]" value="deporte" />Deporte
+          </td>
+          <td>
+            <input type="checkbox" name="aficiones[]" value="musica" />Música
+          </td>
+          <td>
+            <input
+              type="checkbox"
+              name="aficiones[]"
+              value="television"
+            />Televisión
+          </td>
+        </tr>
+      </table>
+
+      <br />
+      <input type="submit" value="Enviar" />
+      <input type="reset" value="Borrar" />
+    </form>
+  </body>
+</html>
