@@ -1,0 +1,8 @@
+<?PHP
+$archivo = fopen("pedidos.txt", "r");
+while (!feof($archivo)) {
+	$linea=fgets($archivo);
+	echo $linea."<br>";
+}
+fclose($archivo);
+?>

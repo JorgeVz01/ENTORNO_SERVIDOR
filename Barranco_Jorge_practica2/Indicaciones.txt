@@ -1,0 +1,7 @@
+Te he incluido la base de datos de nombre "inmobiliaria" para que te funcione correctamente
+
+los usuarios ta registrados por mi tienen todos contraseña "123456"
+
+Para la pagina de administrador se accede con nombre : admin y contraseña : root
+Aunque no me ha dado tiempo a acabar esa parte ya que le dedique demasiado tiempo a todo lo demás.
+

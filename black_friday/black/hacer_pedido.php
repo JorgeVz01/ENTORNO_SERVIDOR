@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>	</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="./css/style.css" title="Color"> 
+	<script type="text/javascript" src="./js/script.js"></script>
+</head>
+
+<body>
+	<form action="hacer_pedido.php" method="POST">
+	<fieldset>
+		<legend>Pedido</legend>
+		Nombre: <input type="text" name="nombre"><br>
+		Direccion: <input type="text" name="direccion"><br>
+		Iphone: <input type="radio" name="iphone" value="iphone"/> Cantidad: <input type="number" name="cantidad_iphone"><br>
+		Roomba: <input type="radio" name="roomba" value="roomba"/> Cantidad: <input type="number" name="cantidad_roomba"><br>
+		Reloj: <input type="radio" name="reloj" value="reloj"/> Cantidad: <input type="number" name="cantidad_reloj"><br>
+	</fieldset>
+	<input type="submit" name="enviar" value="Confirmar">
+	</form>
+</body>
+
+</html>
+<?PHP
+	if (isset($_REQUEST['enviar'])) {
+		date_default_timezone_set("Europe/Madrid");
+		$nombre=$_REQUEST['nombre'];
+		$direccion=$_REQUEST['direccion'];
+		$iphone=$_REQUEST['iphone'];
+		$cantidad_iphone=$_REQUEST['cantidad_iphone'];
+		$roomba=$_REQUEST['roomba'];
+		$cantidad_roomba=$_REQUEST['cantidad_roomba'];
+		$reloj=$_REQUEST['reloj'];
+		$cantidad_reloj=$_REQUEST['cantidad_reloj'];
+		if(strlen($nombre)==0) {
+			echo "Indique un nombre";
+		} else if(strlen($direccion)==0) {
+			echo "Indique una direccion";
+		} else if ($iphone==NULL && $roomba==NULL && $reloj==NULL) {
+			echo "indique un producto";
+		} else if ($iphone!=NULL && $cantidad_iphone==NULL || $roomba!=NULL && $cantidad_roomba==NULL || $reloj!=NULL && $cantidad_reloj==NULL) {
+			echo "Indique una cantidad para el producto seleccionado";
+		} else {
+			$archivo = fopen("pedidos.txt", "a");
+			//No añado el nombre del dispositivo porque tomo por referencia que la primera posicion de cantidad equivale a iphone, la segunda a roomba y la tercera a reloj
+			$cadena = "$nombre:$direccion:$cantidad_iphone:$cantidad_roomba:$cantidad_reloj:"
+			.date("d-m-Y H:i:s");
+			fputs($archivo,"$cadena\n");
+			fclose($archivo);
+		}
+	}
+?>

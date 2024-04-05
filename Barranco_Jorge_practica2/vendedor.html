@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venta de pisos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <style>
+      /* Estilo para ocultar el formulario por defecto */
+      #altaPisoForm {
+        display: none;
+      }
+      /* Estilo para mostrar el formulario cuando se hace clic en el botón */
+      #altaPisoForm.mostrar {
+        display: block;
+      }
+      /* Estilo para el card que contiene el formulario */
+      #altaPisoCard {
+        max-width: 500px; /* Ancho máximo del card */
+        margin-top: 20px; /* Espacio superior */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">¿Quieres vender un piso?</h1>
+
+      <button class="btn btn-primary" id="mostrarFormBtn">
+        Dar de alta un piso
+      </button>
+      <a href="./Pisos/mis_pisos.php" type="submit" class="btn btn-secondary"
+        >Ver mis Pisos</a
+      >
+      <!-- Botón para cerrar sesión -->
+      <div class="card" id="altaPisoCard">
+        <div class="card-body">
+          <h5 class="card-title">Alta de Piso</h5>
+
+          <form
+            action="./Pisos/alta_piso.php"
+            method="post"
+            enctype="multipart/form-data"
+            id="altaPisoForm"
+          >
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="calle" class="form-label">Calle:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="calle"
+                  name="calle"
+                  required
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="numero" class="form-label">Número:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="numero"
+                  name="numero"
+                  required
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="piso" class="form-label">Piso:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="piso"
+                  name="piso"
+                  required
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="puerta" class="form-label">Puerta:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="puerta"
+                  name="puerta"
+                  maxlength="5"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="cp" class="form-label">Código Postal:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cp"
+                  name="cp"
+                  maxlength="5"
+                  required
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="metros" class="form-label">Metros:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="metros"
+                  name="metros"
+                  required
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="zona" class="form-label">Zona:</label>
+                <input type="text" class="form-control" id="zona" name="zona" />
+              </div>
+
+              <div class="col-md-6">
+                <label for="precio" class="form-label">Precio:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="precio"
+                  name="precio"
+                  step="0.01"
+                  required
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="imagen" class="form-label">Imagen:</label>
+              <input
+                type="file"
+                class="form-control"
+                id="imagen"
+                name="imagen"
+                accept="image/*"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Agregar Piso</button>
+          </form>
+        </div>
+      </div>
+      <a href="./session/close.php" class="btn btn-danger">Cerrar Sesión</a>
+    </div>
+
+    <!-- JavaScript para mostrar/ocultar el formulario al hacer clic en el botón -->
+    <script>
+      document
+        .getElementById("mostrarFormBtn")
+        .addEventListener("click", function () {
+          document.getElementById("altaPisoForm").classList.toggle("mostrar");
+        });
+    </script>
+  </body>
+</html>
