@@ -1,0 +1,6 @@
+pepita:x:1003:1004:Jose Manela Andrade,,,:/home/pepita:/bin/sh
+maria:x:1004:1006:Maria Andrade,,,:/home/maria:/bin/csh
+ramon:x:1005:1007:Ramón Roman,,,:/home/ramon:/bin/bash
+pepito:x:1003:1004:Jose Manela Andrade,,,:/home/pepita:/bin/bash
+mario:x:1004:1006:Maria Andrade,,,:/home/maria:/bin/csh
+ramona:x:1005:1007:Ramón Roman,,,:/home/ramon:/bin/bash

@@ -1,0 +1,6 @@
+casa
+pueblo
+volcan
+mesa
+calle
+periodico
